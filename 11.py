@@ -2,7 +2,7 @@ list =[]
 
 file1 = open('11.data', 'r')
 Lines = file1.readlines()
-print("hello")
+print("11")
 tmp = 0
 count =0
 for line in Lines:
