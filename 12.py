@@ -1,8 +1,7 @@
-list =[]
 
 file1 = open('11.data', 'r')
 Lines = file1.readlines()
-print("hello")
+print("12")
 tmp = 0
 count = 0
 tmpalt = 0 
