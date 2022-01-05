@@ -14,7 +14,7 @@ for line in Lines:
              count[x] += 1
 
 print(f"list length {len(Lines)}")
-#evaluate 
+#evaluate and concat string
 for x in range(0,length_of_bits):
     print(count[x])
     if count[x] > len(Lines) /2:
