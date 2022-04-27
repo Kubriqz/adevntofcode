@@ -60,6 +60,36 @@ for listofvalid in listoflistoffvalid:
 
 print()
 
-finallist = listoflistoffvalid[-1]
-for xyz in finallist:
-    print(xyz.name)
+# need wrapper object for indexing and validate
+
+
+class listholderclass:
+    gesamtgewicht = 0
+    gesamtwert = 0
+
+    def __init__(self, listofitems, index):
+
+        self.listofitems = listofitems
+        self.index = index  # justforfun
+
+    def validate(self):
+        for item in self.listofitems:
+            self.gesamtgewicht += item.gewicht
+            self.gesamtwert += item.wert
+
+
+# make finallist
+finallist = []
+countit = 0
+for listofitems in listoflistoffvalid:
+    temp = listholderclass(listofitems, countit)
+    temp.validate()
+    finallist.append(temp)
+    countit += 1
+
+# order it
+finallist.sort(key=lambda x: x.gesamtwert, reverse=True)
+
+# take the first
+for item in finallist[0].listofitems:
+    print(item.name)
